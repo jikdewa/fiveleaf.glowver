@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Saya</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<div class="min-h-screen p-3 md:p-5">
+
+    <!-- MOBILE HEADER -->
+    <div class="lg:hidden mb-4">
+
+        <div class="bg-white rounded-2xl shadow p-4 flex justify-between items-center">
+
+            <h1 class="font-bold text-xl">
+                Glowver POS
+            </h1>
+
+            <button id="menuBtn">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="flex gap-5">
+
+        <!-- SIDEBAR -->
+        <aside
+            id="sidebar"
+            class="fixed lg:static top-0 left-[-300px] lg:left-0 z-50 w-72 h-screen bg-white rounded-r-xl lg:rounded-xl shadow-lg p-4 transition-all duration-300">
+
+            <div class="flex justify-between items-center mb-8">
+
+                <h2 class="font-bold text-2xl">
+                    Glowver
+                </h2>
+
+                <button id="closeBtn" class="lg:hidden">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+
+            </div>
+
+            <ul class="space-y-3">
+
+                <li>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-blue-600 text-white">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100">
+                        <i class="fa-solid fa-cash-register"></i>
+                        Sales
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Purchase
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100">
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                        Sales Return
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100">
+                        <i class="fa-solid fa-arrow-rotate-right"></i>
+                        Purchase Return
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                        Inventory
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- CONTENT -->
+        <main class="flex-1">
+
+            <!-- TOPBAR -->
+            <div class="hidden lg:flex bg-white rounded-xl shadow-lg p-4 justify-between items-center">
+
+                <div class="relative w-full max-w-md">
+
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        class="w-full border rounded-xl px-4 py-2">
+
+                    <i class="fa-solid fa-magnifying-glass absolute right-4 top-3 text-gray-400"></i>
+
+                </div>
+
+                <div class="flex items-center gap-6 text-xl">
+
+                    <i class="fa-regular fa-envelope"></i>
+                    <i class="fa-regular fa-bell"></i>
+                    <i class="fa-solid fa-gear"></i>
+
+                    <div class="w-12 h-12 bg-black rounded-full"></div>
+
+                </div>
+
+            </div>
+
+            <!-- TITLE -->
+            <h1 class="text-xl md:text-5xl font-bold mt-5">
+                Dashboard
+            </h1>
+
+            <!-- ALERT -->
+            <div class="mt-5 bg-red-100 text-red-600 rounded-xl p-4">
+
+                <i class="fa-solid fa-circle-exclamation"></i>
+
+                Ada produk yang hampir habis, segera restok.
+
+                <a href="#" class="underline">
+                    View More...
+                </a>
+
+            </div>
+
+            <!-- CARDS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-6">
+
+                <!-- SALES -->
+                <div class="bg-[#0C466C] text-white rounded-xl p-5">
+
+                    <div class="flex justify-between items-center">
+
+                        <div class="flex gap-4">
+
+                            <div class="w-14 h-14 md:w-20 md:h-20 bg-white rounded-2xl flex items-center justify-center">
+
+                                <i class="fa-regular fa-file-lines text-2xl md:text-4xl text-[#0C466C]"></i>
+
+                            </div>
+
+                            <div>
+
+                                <p class="text-lg md:text-2xl">
+                                    Total Sales
+                                </p>
+
+                                <h2 class="text-2xl md:text-4xl font-bold">
+                                    Rp 5.450.000
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                        <span class="bg-green-100 text-green-600 px-3 py-1 rounded-lg">
+                            +20%
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- SALES RETURN -->
+                <div class="bg-[#16A596] text-white rounded-xl p-5">
+
+                    <div class="flex justify-between items-center">
+
+                        <div class="flex gap-4">
+
+                            <div class="w-14 h-14 md:w-20 md:h-20 bg-white rounded-2xl flex items-center justify-center">
+
+                                <i class="fa-solid fa-arrow-rotate-left text-2xl md:text-4xl text-[#16A596]"></i>
+
+                            </div>
+
+                            <div>
+
+                                <p class="text-lg md:text-2xl">
+                                    Sales Return
+                                </p>
+
+                                <h2 class="text-2xl md:text-4xl font-bold">
+                                    Rp 1.250.000
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                        <span class="bg-red-100 text-red-600 px-3 py-1 rounded-lg">
+                            -20%
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- PURCHASE -->
+                <div class="bg-[#F2B655] text-white rounded-xl p-5">
+
+                    <div class="flex justify-between items-center">
+
+                        <div class="flex gap-4">
+
+                            <div class="w-14 h-14 md:w-20 md:h-20 bg-white rounded-2xl flex items-center justify-center">
+
+                                <i class="fa-solid fa-cart-shopping text-2xl md:text-4xl text-[#F2B655]"></i>
+
+                            </div>
+
+                            <div>
+
+                                <p class="text-lg md:text-2xl">
+                                    Purchase
+                                </p>
+
+                                <h2 class="text-2xl md:text-4xl font-bold">
+                                    Rp 3.850.000
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                        <span class="bg-green-100 text-green-600 px-3 py-1 rounded-lg">
+                            +20%
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CHART & WIDGET -->
+            <div class="grid grid-cols-1 xl:grid-cols-4 gap-5 mt-6">
+
+                <div class="xl:col-span-3 bg-white rounded-xl shadow p-6">
+
+                    <h2 class="text-2xl md:text-4xl mb-6">
+                        Profit Graphic
+                    </h2>
+
+                    <div class="h-[400px]">
+                        <canvas id="chart"></canvas>
+                    </div>
+
+                </div>
+
+                <div class="bg-white rounded-xl shadow min-h-[300px]"></div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script>
+const sidebar = document.getElementById('sidebar');
+const menuBtn = document.getElementById('menuBtn');
+const closeBtn = document.getElementById('closeBtn');
+
+menuBtn?.addEventListener('click', () => {
+    sidebar.classList.remove('left-[-300px]');
+    sidebar.classList.add('left-0');
+});
+
+closeBtn?.addEventListener('click', () => {
+    sidebar.classList.remove('left-0');
+    sidebar.classList.add('left-[-300px]');
+});
+</script>
+
+</body>
+</html>
